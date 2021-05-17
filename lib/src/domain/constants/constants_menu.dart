@@ -1,0 +1,13 @@
+var categoriesNames = [
+  'ENTRADAS',
+  'SOPAS',
+  'PLATOS FUERTES',
+  'PASTAS',
+  'ARROCES',
+  'SUSHI',
+  'ESPECIALIDADES DE SUSHI',
+  'CHAROLA DE SUSHI',
+  'COMBOS',
+  'POSTRES',
+  'BEBIDAS',
+];
