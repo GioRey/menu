@@ -3,52 +3,124 @@
         {
             "ENTRADAS": [
                 {
-                    "name": "SUMASHI",
-                    "price": "90.00",
-                    "desc": "Fideos de lluvia, champiñon, cebollin, zanahoria, pescado 40 gramos, pulpo 40 gramos y camarones 40 gramos. 225 mililitros.",
-                    "image": "thumb_139_225_180_0_0_crop.jpg"
-                },
-                {
-                    "name": "SUSHI CALIFORNIA ROLL",
+                    "name": "TSUKI YOMI",
+                    "desc": "Xf empanizadas, salsa de anguila y furikake xd camaron, tampico y aguacate. 3 piezas.",
                     "price": "65.00",
-                    "desc": "Xf ajonjolI, xd cangrejo, aguacate y pepino.",
-                    "image": "thumb_255_225_180_0_0_crop.png"
+                    "image": "thumb_215_225_180_0_0_crop.jpg"
                 },
                 {
-                    "name": "SUSHI ALASKAN MAKI",
-                    "price": "78.00",
-                    "desc": "Xf masago, xd salmon y queso filadelfia.",
-                    "image": "thumb_41_225_180_0_0_crop.jpg"
-                },
-                {
-                    "name": "GENBU ROLL",
-                    "price": "88.00",
-                    "desc": "Xf aguacate, tampico, shishimi y salsa spicy mayo xd salmon, queso y pepino.",
-                    "image": "thumb_190_225_180_0_0_crop.jpg"
-                },
-                {
-                    "name": "RAMEN NARUTO",
-                    "price": "85.00",
-                    "desc": "Naruto, huevo, cerdo 100 gramos, espinaca, cebollin y zanahoria.",
-                    "image": "thumb_141_225_180_0_0_crop.jpg"
+                    "name": "AMATERASU",
+                    "desc": "Xf empanizadas, salsa teriyaki y salsa chipotle, xd salmon, queso, aguacate y mango (en temporada). 3 piezas.",
+                    "price": "74.00",
+                    "image": "thumb_214_225_180_0_0_crop.jpg"
                 },
                 {
                     "name": "ONIGUIRI EMPANIZADO",
-                    "price": "40.00",
                     "desc": "Angulo de arroz relleno de queso y salsa oniguiri.",
+                    "price": "40.00",
                     "image": "thumb_122_225_180_0_0_crop.jpg"
                 },
                 {
                     "name": "NIGIRI SUSHI CAMARON",
-                    "price": "49.00",
                     "desc": "2 piezas.",
+                    "price": "49.00",
                     "image": "thumb_123_225_180_0_0_crop.jpg"
                 },
                 {
-                    "name": "TEMPURA UDON",
-                    "price": "90.00",
-                    "desc": "Sopa de pasta udon, espinacas, naruto y camarones empanizados 3 piezas.",
-                    "image": "thumb_140_225_180_0_0_crop.jpg"
+                    "name": "TEMAKI SUSHI CAMARON",
+                    "desc": "Aguacate, pepino y aderezo spicy mayo.",
+                    "price": "60.00",
+                    "image": "thumb_125_225_180_0_0_crop.jpg"
+                },
+                {
+                    "name": "TEMAKI SUSHI SALMON",
+                    "desc": "Queso, pepino, mango y salsa spicy anguila.",
+                    "price": "60.00",
+                    "image": "thumb_126_225_180_0_0_crop.jpg"
+                },
+                {
+                    "name": "YAKITORI POLLO",
+                    "desc": "Brocheta con salsa anguila. Pimiento y cebolla, orden de 3 piezas, 1 pieza 35 gramos.",
+                    "price": "62.00",
+                    "image": "thumb_128_225_180_0_0_crop.jpeg"
+                },
+                {
+                    "name": "YAKITORI RES Y CEBOLLA",
+                    "desc": "Brocheta con salsa anguila. Orden de 3 piezas 1 pieza 35 gramos.",
+                    "price": "70.00",
+                    "image": "thumb_130_225_180_0_0_crop.jpg"
+                },
+                {
+                    "name": "KUSHIAGE CAMARON CON QUESO",
+                    "desc": "Brocheta empanizada. Orden de 3 piezas 1 pieza 35 gramos.",
+                    "price": "73.00",
+                    "image": "thumb_132_225_180_0_0_crop.jpg"
+                },
+                {
+                    "name": "KUSHIAGE PLATANO",
+                    "desc": "Brocheta empanizada. Orden de 3 piezas 1 pieza 35 gramos.",
+                    "price": "45.00",
+                    "image": "thumb_133_225_180_0_0_crop.jpeg"
+                },
+                {
+                    "name": "TOFU ANGUILA",
+                    "desc": "Tofu empanizado, salsa anguila, katsuobushi y cebollín. 87 gramos.",
+                    "price": "50.00",
+                    "image": "thumb_223_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "GYOZAS",
+                    "desc": "Ravioles rellenos de cerdo en especias. 3 piezas.",
+                    "price": "52.00",
+                    "image": "thumb_224_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "ONIGUIRI",
+                    "desc": "Angulo de arroz relleno de queso o tampico y salsa anguila.",
+                    "price": "37.00",
+                    "image": "thumb_225_225_180_0_0_crop.jpg"
+                },
+                {
+                    "name": "NIGIRI SUSHI SALMON",
+                    "desc": "2 piezas.",
+                    "price": "49.00",
+                    "image": "thumb_226_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "YAKITORI CAMARON",
+                    "desc": "Brocheta con salsa anguila. Orden de 3 piezas, 1 pieza 35 gramos.",
+                    "price": "85.00",
+                    "image": "thumb_227_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "YAKITORI PULPO Y PIMIENTO",
+                    "desc": "Brocheta con salsa anguila. Orden de 3 piezas, 1 pieza 35 gramos.",
+                    "price": "75.00",
+                    "image": "thumb_228_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "KUSHIAGE CAMARON",
+                    "desc": "Brocheta empanizada. Orden de 3 piezas 1 pieza 35 gramos.",
+                    "price": "65.00",
+                    "image": "thumb_229_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "KUSHIAGE PLATANO CON QUESO",
+                    "desc": "Brocheta empanizada. Orden de 3 piezas 1 pieza 35 gramos.",
+                    "price": "55.00",
+                    "image": "thumb_230_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "KUSHIAGE QUESO MANCHEGO",
+                    "desc": "Brocheta empanizada. Orden de 3 piezas 1 pieza 35 gramos.",
+                    "price": "55.00",
+                    "image": "thumb_231_225_180_0_0_crop.png"
+                },
+                {
+                    "name": "TAKOYAKIS 9 PIEZAS",
+                    "desc": "Bolitas capeadas rellenas con trozos de pulpo.",
+                    "price": "75.00",
+                    "image": "thumb_232_225_180_0_0_crop.png"
                 }
             ]
         },

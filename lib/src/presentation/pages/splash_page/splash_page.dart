@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu/src/domain/constants/constants.dart';
+import 'package:menu/src/domain/constants/constants_colors.dart';
 import 'package:menu/src/domain/constants/constants_routes.dart';
 
 class SplashPage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
       body: GestureDetector(
         onVerticalDragUpdate: (details) {
           if (details.primaryDelta < -10) {
-            Get.offNamed(
+            Get.toNamed(
               ConstantsRoutes.homePage,
               preventDuplicates: true,
             );
@@ -36,16 +37,16 @@ class _SplashPageState extends State<SplashPage> {
                     end: AlignmentDirectional.bottomCenter,
                     colors: [
                       //Color(0XFFA89276),
-                      Colors.black87,
-                      Colors.black
+                      greenColor,
+                      blueColor,
                     ],
                   ),
                 ),
-                child: Image.asset(
+                /*child: Image.asset(
                   'assets/images/splash/splash.jpg',
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
-                ),
+                ),*/
               ),
             ),
             Positioned(
@@ -59,7 +60,7 @@ class _SplashPageState extends State<SplashPage> {
                       style: GoogleFonts.sairaCondensed(
                           fontWeight: FontWeight.bold,
                           fontSize: 60,
-                          color: Colors.white),
+                          color: Colors.black),
                       textAlign: TextAlign.center,
                     ),
                   ),

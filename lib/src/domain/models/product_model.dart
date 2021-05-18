@@ -18,7 +18,5 @@ class ProductModel {
     description = json['desc'];
     price = json['price'];
     image = json['image'];
-    print(name);
-    print(image);
   }
 }

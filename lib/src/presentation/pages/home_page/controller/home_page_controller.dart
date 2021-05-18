@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:menu/src/domain/constants/constants_menu.dart';
-import 'package:menu/src/domain/constants/demo_prods.dart';
 import 'package:menu/src/domain/models/category_model.dart';
 import 'package:menu/src/domain/models/item_model.dart';
 import 'package:menu/src/domain/models/tab_category.dart';
@@ -62,30 +60,27 @@ class HomePageController extends GetxController {
       }
     }
     scrollController.addListener(_onScrollListener);
-    isLoading(false);
+    Future.delayed(const Duration(seconds: 2), () => isLoading(false));
   }
 
   void _onScrollListener() {
     if (_listen) {
       for (int i = 0; i < tabsCategory.length; i++) {
         final tab = tabsCategory[i];
-        if (scrollController.offset >= tab.offsetFrom &&
-            scrollController.offset <= tab.offsetTo &&
-            !tab.selected) {
-          /*print(
-            'TAB_SELECT_OFFSET_FROM -> ${scrollController.offset >= tab.offsetFrom}',
-          );
-          print(
-            'TAB_SELECT_OFFSET_TO -> ${scrollController.offset <= tab.offsetTo}',
-          );
-          print(
-            'TAB_SELECT -> $i',
-          );*/
-          onTabSelected(i, animationRequired: false);
-          //print('TAB_SELECT_OBX -> ${isSelectedTabCategory.value}');
 
-          tabsController.animateTo(i);
+        //print('SCROLL --> ${scrollController.offset}');
+        if (scrollController.offset >= tab.offsetFrom &&
+            i > isSelectedTabCategory.value &&
+            !tab.selected) {
+          onTabSelected(i, animationRequired: false);
+          tabsController.animateTo(isSelectedTabCategory.value);
           break;
+        }
+        if (scrollController.offset <= tab.offsetFrom &&
+            i < isSelectedTabCategory.value &&
+            !tab.selected) {
+          onTabSelected(i, animationRequired: false);
+          tabsController.animateTo(isSelectedTabCategory.value);
         }
       }
     }
@@ -98,6 +93,7 @@ class HomePageController extends GetxController {
       tabsCategory[i] = tabsCategory[i].copyWith(condition);
     }
     isSelectedTabCategory(index);
+
     if (animationRequired) {
       _listen = false;
       await scrollController.animateTo(
@@ -112,16 +108,16 @@ class HomePageController extends GetxController {
   @override
   void onClose() {
     tabsController.dispose();
-    scrollController.dispose();
     scrollController.removeListener(_onScrollListener);
+    scrollController.dispose();
     super.onClose();
   }
 
   @override
   void dispose() {
     tabsController.dispose();
-    scrollController.dispose();
     scrollController.removeListener(_onScrollListener);
+    scrollController.dispose();
     super.dispose();
   }
 }

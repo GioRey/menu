@@ -17,26 +17,28 @@ class Routes {
         ],
         transition: Transition.fade),
     GetPage(
-        name: ConstantsRoutes.homePage,
-        page: () => HomePage(),
-        bindings: [
-          MainBinding(),
-          HomeBinding(),
-        ],
-        transition: Transition.fade),
-    GetPage(
+      name: ConstantsRoutes.homePage,
+      page: () => HomePage(),
+      bindings: [
+        MainBinding(),
+        HomeBinding(),
+      ],
+      transition: Transition.fade,
+    ),
+    /*GetPage(
       name: ConstantsRoutes.categoryPage,
       page: () => CategoryPage(),
       bindings: [
         MainBinding(),
       ],
-    ),
+    ),*/
     GetPage(
       name: ConstantsRoutes.singlePage,
       page: () => SinglePage(),
       bindings: [
         MainBinding(),
       ],
+      transition: Transition.fade,
     ),
   ];
 }

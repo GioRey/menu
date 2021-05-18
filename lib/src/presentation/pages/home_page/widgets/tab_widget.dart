@@ -15,6 +15,8 @@ class TabWidget extends StatelessWidget {
       child: Container(
         child: Card(
           elevation: selected ? 6 : 0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(

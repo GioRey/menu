@@ -28,7 +28,7 @@ class MainApp extends StatelessWidget {
         accentColor: greenColor,
       ),
       getPages: Routes.pages,
-      initialRoute: ConstantsRoutes.homePage,
+      initialRoute: ConstantsRoutes.splashPage,
       initialBinding: MainBinding(),
     );
   }
