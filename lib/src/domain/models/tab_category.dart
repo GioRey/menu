@@ -20,8 +20,4 @@ class TabCategory {
   bool selected;
   double offsetFrom;
   double offsetTo;
-
-  // TabCategory.fromJson(Map<String, dynamic> json) {
-  //   categoryModel = json[''];
-  // }
 }

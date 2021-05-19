@@ -23,12 +23,14 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: Constants.appName,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(color: Colors.black45),
+        appBarTheme: AppBarTheme(
+          color: Colors.black45,
+        ),
         brightness: Brightness.light,
         accentColor: greenColor,
       ),
       getPages: Routes.pages,
-      initialRoute: ConstantsRoutes.splashPage,
+      initialRoute: ConstantsRoutes.homePage,
       initialBinding: MainBinding(),
     );
   }

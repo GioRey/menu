@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:menu/src/domain/models/category_model.dart';
 import 'package:menu/src/domain/models/product_model.dart';
 

@@ -8,12 +8,6 @@ import 'package:menu/src/domain/repository/api_repository_interface.dart';
 
 class ApiRepositoryImplementation extends ApiRepositoryinterface {
   @override
-  Future<void> loadHome() async {
-    // TODO: implement loadHome
-    throw UnimplementedError();
-  }
-
-  @override
   Future<List<CategoryModel>> loadMenuJson() async {
     String data = await rootBundle.loadString('assets/data/menu.json');
     List<CategoryModel> categoryModel = [];

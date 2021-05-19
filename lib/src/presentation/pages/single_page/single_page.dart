@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu/src/domain/constants/constants.dart';
 import 'package:menu/src/domain/constants/constants_colors.dart';
@@ -176,18 +175,3 @@ class _SinglePageState extends State<SinglePage> {
     );
   }
 }
-
-/*
-
-Hero(
-                          tag: productModel.name,
-                          child: CircleAvatar(
-                            radius: 90.0,
-                            backgroundColor: greenColor,
-                            backgroundImage: AssetImage(
-                              'assets/images/menu/' + productModel.image,
-                            ),
-                          ),
-                        ),
-
-*/

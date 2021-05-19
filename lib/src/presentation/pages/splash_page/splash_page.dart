@@ -16,17 +16,24 @@ class _SplashPageState extends State<SplashPage> {
   var size = Get.size;
 
   @override
+  void initState() {
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        Get.offNamed(
+          ConstantsRoutes.homePage,
+          preventDuplicates: true,
+        );
+      },
+    );
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onVerticalDragUpdate: (details) {
-          if (details.primaryDelta < -10) {
-            Get.toNamed(
-              ConstantsRoutes.homePage,
-              preventDuplicates: true,
-            );
-          }
-        },
+        onVerticalDragUpdate: (details) {},
         child: Stack(
           children: [
             SizedBox.expand(
@@ -36,17 +43,11 @@ class _SplashPageState extends State<SplashPage> {
                     begin: AlignmentDirectional.topCenter,
                     end: AlignmentDirectional.bottomCenter,
                     colors: [
-                      //Color(0XFFA89276),
                       greenColor,
                       blueColor,
                     ],
                   ),
                 ),
-                /*child: Image.asset(
-                  'assets/images/splash/splash.jpg',
-                  fit: BoxFit.cover,
-                  alignment: Alignment.topCenter,
-                ),*/
               ),
             ),
             Positioned(
@@ -68,7 +69,7 @@ class _SplashPageState extends State<SplashPage> {
               ),
               left: size.width * 0.05,
               right: size.width * 0.05,
-              top: size.height * 0.6, //0.05,
+              top: size.height * 0.6,
             ),
           ],
         ),

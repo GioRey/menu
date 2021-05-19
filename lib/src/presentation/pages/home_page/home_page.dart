@@ -72,18 +72,6 @@ class _HomePageState extends State<HomePage>
                           ),
                         ),
                       ),
-                      InkWell(
-                        onTap: () {},
-                        child: CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 18.0,
-                          child: Icon(
-                            Icons.settings,
-                            color: greenColor,
-                            size: 48,
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -103,6 +91,7 @@ class _HomePageState extends State<HomePage>
                     );
                   } else {
                     final index = _homeController.isSelectedTabCategory;
+                    // ignore: unrelated_type_equality_checks
                     if (index != 20) {}
                     return TabBar(
                       controller: _homeController.tabsController,
