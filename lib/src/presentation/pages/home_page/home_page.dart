@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage>
         child: Column(
           children: [
             Container(
-              height: 90,
+              height: 83,
               child: Card(
                 color: backgroundColor,
                 elevation: 0,
