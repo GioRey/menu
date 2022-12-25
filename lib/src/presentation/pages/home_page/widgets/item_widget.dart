@@ -5,11 +5,13 @@ import 'package:menu/src/domain/constants/constants_colors.dart';
 import 'package:menu/src/domain/models/product_model.dart';
 import 'package:menu/src/presentation/pages/home_page/controller/home_page_controller.dart';
 import 'package:menu/src/presentation/pages/single_page/single_page.dart';
+import 'package:menu/src/state_management/data/api_repository_implementation.dart';
 
-var _controller = Get.put(HomePageController());
+var _controller = Get.put(
+    HomePageController(apiRepositoryinterface: ApiRepositoryImplementation()));
 
 class ItemWidget extends StatelessWidget {
-  final ProductModel productModel;
+  final ProductModel? productModel;
   const ItemWidget(this.productModel);
 
   @override
@@ -44,12 +46,12 @@ class ItemWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Hero(
-                      tag: productModel.name,
+                      tag: '${productModel!.name}',
                       child: CircleAvatar(
                         radius: 40.0,
                         backgroundColor: greenColor,
                         backgroundImage: AssetImage(
-                          'assets/images/menu/' + productModel.image,
+                          'assets/images/menu/' + '${productModel!.image}',
                         ),
                       ),
                     ),
@@ -61,7 +63,7 @@ class ItemWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          productModel.name,
+                          '${productModel!.name}',
                           style: GoogleFonts.sairaCondensed(
                             fontWeight: FontWeight.w600,
                             fontSize: 12,
@@ -75,7 +77,7 @@ class ItemWidget extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(2.0),
                           child: Text(
-                            productModel.description,
+                            '${productModel!.description}',
                             style: GoogleFonts.sairaCondensed(
                               fontWeight: FontWeight.w600,
                               fontSize: 11,
@@ -88,7 +90,7 @@ class ItemWidget extends StatelessWidget {
                           height: 3,
                         ),
                         Text(
-                          '\$ ' + productModel.price,
+                          '\$ ' + '${productModel!.price}',
                           style: GoogleFonts.sairaCondensed(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,

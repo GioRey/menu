@@ -5,13 +5,13 @@ import 'package:menu/src/domain/models/tab_category.dart';
 
 class TabWidget extends StatelessWidget {
   TabWidget(this.tabCategory);
-  final TabCategory tabCategory;
+  final TabCategory? tabCategory;
 
   @override
   Widget build(BuildContext context) {
-    final selected = tabCategory.selected;
+    final selected = tabCategory!.selected;
     return Opacity(
-      opacity: selected ? 1 : 0.5,
+      opacity: selected! ? 1 : 0.5,
       child: Container(
         child: Card(
           elevation: selected ? 6 : 0,
@@ -20,7 +20,7 @@ class TabWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              tabCategory.categoryModel.name,
+              '${tabCategory!.categoryModel!.name}',
               style: GoogleFonts.sairaCondensed(
                 fontWeight: FontWeight.bold,
                 fontSize: 15,

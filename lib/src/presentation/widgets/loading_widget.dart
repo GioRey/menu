@@ -3,7 +3,7 @@ import 'package:menu/src/domain/constants/constants_colors.dart';
 import 'package:shimmer/shimmer.dart';
 
 Widget loadingWidget(
-        {@required double height, double width, @required double radius}) =>
+        {required double? height, double? width, required double radius}) =>
     Container(
       height: height,
       width: width,
@@ -15,7 +15,7 @@ Widget loadingWidget(
             ),
           ),
         ),
-        baseColor: greenColor,
+        baseColor: Colors.grey.shade200,
         highlightColor: Colors.white70,
       ),
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
 class ProductModel {
-  String name;
-  String description;
-  String price;
-  String image;
+  String? name;
+  String? description;
+  String? price;
+  String? image;
 
   ProductModel({
     @required this.name,

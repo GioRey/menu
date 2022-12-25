@@ -16,8 +16,8 @@ class TabCategory {
         offsetTo: offsetTo,
       );
 
-  CategoryModel categoryModel;
-  bool selected;
-  double offsetFrom;
-  double offsetTo;
+  CategoryModel? categoryModel;
+  bool? selected;
+  double? offsetFrom;
+  double? offsetTo;
 }

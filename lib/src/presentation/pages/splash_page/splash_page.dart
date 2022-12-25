@@ -6,7 +6,7 @@ import 'package:menu/src/domain/constants/constants_colors.dart';
 import 'package:menu/src/domain/constants/constants_routes.dart';
 
 class SplashPage extends StatefulWidget {
-  SplashPage({Key key}) : super(key: key);
+  SplashPage({Key? key}) : super(key: key);
 
   @override
   _SplashPageState createState() => _SplashPageState();

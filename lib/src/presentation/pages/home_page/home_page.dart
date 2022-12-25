@@ -9,11 +9,13 @@ import 'package:menu/src/presentation/pages/home_page/widgets/category_widget.da
 import 'package:menu/src/presentation/pages/home_page/widgets/item_widget.dart';
 import 'package:menu/src/presentation/pages/home_page/widgets/tab_widget.dart';
 import 'package:menu/src/presentation/widgets/loading_widget.dart';
+import 'package:menu/src/state_management/data/api_repository_implementation.dart';
 
-var _homeController = Get.put(HomePageController());
+var _homeController = Get.put(
+    HomePageController(apiRepositoryinterface: ApiRepositoryImplementation()));
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,18 +23,23 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  List<CategoryModel> data;
+  late List<CategoryModel> data;
 
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      loadMenu(this, data);
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      data = await _homeController.apiRepositoryinterface.loadMenuJson();
+    });
+
+    Future.delayed(const Duration(milliseconds: 1000), () async {
+      loadMenu(
+        this,
+      );
     });
     super.initState();
   }
 
-  void loadMenu(TickerProvider ticker, data) async {
-    data = await _homeController.apiRepositoryinterface.loadMenuJson();
+  void loadMenu(TickerProvider ticker) async {
     setState(() {
       _homeController.init(ticker: this, allcategories: data);
     });

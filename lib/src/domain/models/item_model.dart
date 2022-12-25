@@ -7,8 +7,8 @@ class ItemModel {
     this.productModel,
   });
 
-  final CategoryModel categoryModel;
-  final ProductModel productModel;
+  final CategoryModel? categoryModel;
+  final ProductModel? productModel;
 
   bool get isCategory => categoryModel != null;
 }

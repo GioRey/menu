@@ -7,8 +7,8 @@ import 'package:menu/src/domain/models/product_model.dart';
 const imageRadius = 90.0;
 
 class SinglePage extends StatefulWidget {
-  final ProductModel productModel;
-  const SinglePage({Key key, this.productModel}) : super(key: key);
+  final ProductModel? productModel;
+  const SinglePage({Key? key, this.productModel}) : super(key: key);
 
   @override
   _SinglePageState createState() => _SinglePageState();
@@ -71,13 +71,14 @@ class _SinglePageState extends State<SinglePage> {
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Hero(
-                        tag: widget.productModel.name,
+                        tag: '${widget.productModel?.name}',
                         child: CircleAvatar(
                           radius: imageRadius,
                           child: CircleAvatar(
                             radius: imageRadius - 5,
                             backgroundImage: AssetImage(
-                              'assets/images/menu/' + widget.productModel.image,
+                              'assets/images/menu/' +
+                                  '${widget.productModel!.image}',
                             ),
                           ),
                           backgroundColor: Colors.white24,
@@ -93,7 +94,7 @@ class _SinglePageState extends State<SinglePage> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 30.0),
                       child: Text(
-                        widget.productModel.name,
+                        '${widget.productModel!.name}',
                         style: GoogleFonts.sairaCondensed(
                           fontWeight: FontWeight.bold,
                           fontSize: 36,
@@ -123,7 +124,7 @@ class _SinglePageState extends State<SinglePage> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            widget.productModel.description,
+                            '${widget.productModel!.description}',
                             style: GoogleFonts.sairaCondensed(
                               fontWeight: FontWeight.w500,
                               fontSize: 24,
@@ -138,15 +139,15 @@ class _SinglePageState extends State<SinglePage> {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.cyan[100],
+                          color: Colors.cyan[50],
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: <BoxShadow>[
                             BoxShadow(
-                              color: Colors.cyan[100],
-                              blurRadius: 100.0,
+                              color: Colors.cyan,
+                              blurRadius: 0.0,
                               offset: Offset(
                                 0.0,
-                                0.75,
+                                0.0,
                               ),
                             ),
                           ],
@@ -154,7 +155,7 @@ class _SinglePageState extends State<SinglePage> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            '\$${widget.productModel.price}',
+                            '\$${widget.productModel!.price}',
                             style: GoogleFonts.sairaCondensed(
                               fontWeight: FontWeight.w500,
                               fontSize: 24,

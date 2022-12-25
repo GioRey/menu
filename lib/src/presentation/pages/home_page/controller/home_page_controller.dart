@@ -6,10 +6,10 @@ import 'package:menu/src/domain/models/tab_category.dart';
 import 'package:menu/src/domain/repository/api_repository_interface.dart';
 
 class HomePageController extends GetxController {
-  final ApiRepositoryinterface apiRepositoryinterface;
-  HomePageController({this.apiRepositoryinterface});
+  late ApiRepositoryinterface apiRepositoryinterface;
+  HomePageController({required this.apiRepositoryinterface});
 
-  TabController tabsController;
+  late TabController tabsController;
   ScrollController scrollController = ScrollController();
   RxInt isSelectedTabCategory = 0.obs;
   bool _listen = true;
@@ -23,7 +23,9 @@ class HomePageController extends GetxController {
 
   List<CategoryModel> allCategories = [];
 
-  void init({TickerProvider ticker, List<CategoryModel> allcategories}) async {
+  void init(
+      {required TickerProvider ticker,
+      required List<CategoryModel> allcategories}) async {
     allCategories = allcategories;
 
     tabsController = TabController(length: allCategories.length, vsync: ticker);
@@ -35,12 +37,12 @@ class HomePageController extends GetxController {
       final category = allCategories[i];
 
       if (i > 0) {
-        offsetFrom += allCategories[i - 1].products.length * itemHeight;
+        offsetFrom += allCategories[i - 1].products!.length * itemHeight;
       }
 
       if (i < allCategories.length - 1) {
         offsetTo =
-            offsetFrom + allCategories[i + 1].products.length * itemHeight;
+            offsetFrom + allCategories[i + 1].products!.length * itemHeight;
       } else {
         offsetTo = double.infinity;
       }
@@ -54,8 +56,8 @@ class HomePageController extends GetxController {
         ),
       );
       items.add(ItemModel(categoryModel: category));
-      for (var j = 0; j < category.products.length; j++) {
-        final product = category.products[j];
+      for (var j = 0; j < category.products!.length; j++) {
+        final product = category.products![j];
         items.add(ItemModel(productModel: product));
       }
     }
@@ -69,16 +71,16 @@ class HomePageController extends GetxController {
         final tab = tabsCategory[i];
 
         //print('SCROLL --> ${scrollController.offset}');
-        if (scrollController.offset >= tab.offsetFrom &&
+        if (scrollController.offset >= tab.offsetFrom! &&
             i > isSelectedTabCategory.value &&
-            !tab.selected) {
+            !tab.selected!) {
           onTabSelected(i, animationRequired: false);
           tabsController.animateTo(isSelectedTabCategory.value);
           break;
         }
-        if (scrollController.offset <= tab.offsetFrom &&
+        if (scrollController.offset <= tab.offsetFrom! &&
             i < isSelectedTabCategory.value &&
-            !tab.selected) {
+            !tab.selected!) {
           onTabSelected(i, animationRequired: false);
           tabsController.animateTo(isSelectedTabCategory.value);
         }
@@ -97,7 +99,7 @@ class HomePageController extends GetxController {
     if (animationRequired) {
       _listen = false;
       await scrollController.animateTo(
-        selected.offsetFrom,
+        selected.offsetFrom!,
         duration: const Duration(milliseconds: 500),
         curve: Curves.linear,
       );
